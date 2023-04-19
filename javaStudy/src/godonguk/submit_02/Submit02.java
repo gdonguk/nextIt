@@ -36,7 +36,7 @@ public class Submit02 {
 		*/
 		
 		// 02번
-		
+		System.out.println("수정해봄");
 		
 		String idBack = "1231476";
 		
