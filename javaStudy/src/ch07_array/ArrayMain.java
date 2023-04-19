@@ -9,7 +9,7 @@ public class ArrayMain {
 
 	public static void main(String[] args) throws NoSuchAlgorithmException {
 		// 배열(Array)
-
+		// 테스트용 주석 
 		String samjang = "삼장";
 		String woogong = "오공";
 		String saojeong = "사오정";
