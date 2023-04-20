@@ -65,13 +65,36 @@ public class ApiPatten {
 		result = Pattern.matches(regex, example);
 		System.out.println(result);
 		
+		// 같은 숫자 3회 이상 반복 금지
+		example = "221131";
+		regex = "[0-9]{6}";
+		result = Pattern.matches(regex, example);
+		if(result) {
+			regex = ".*([0-9]).*\\1.*\\1.*"; 
+			result = Pattern.matches(regex, example);
+			System.out.println(result);			
+		}
+		
+		// 영어와 숫자로만 구성
+		example = "1q2w3e4";
+		regex = "[0-9a-zA-Z]+";
+		regex = "\\w+";
+		
+		result = Pattern.matches(regex, example);
+		System.out.println(result);			
+		
+		// 영어 소문자, 대문자, 숫자, 특수문자 각각 1자리 이상
+		// 8자리 ~ 12자리로 설정해주세요 !!
+		
+		example = "sfe143ES!#";
+		
+		// 알파뱃 소문자가 1자리 이상이면 true
+		regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$#!%*?&])[A-Za-z\\vd@$!%*?&]{8,10}$";
 		
 		
-		
-		
-		
-		
-		
+		result = Pattern.matches(regex, example);
+		System.out.println(result);			
+
 		
 		
 		
