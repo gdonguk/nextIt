@@ -16,13 +16,16 @@ public class BoardMain {
 		while(true) {
 			if(command == 1) {
 				// 글 목록 출력 
+				System.out.println();
+				break;
 			} else if(command == 2) {
 				// 글 쓰기 
 				System.out.println("글 제목을 입력해주세요: ");
 				String listTitle = scan.nextLine();
 				System.out.println("글 내용을 입력해주세요: ");
 				String listInsert = scan.nextLine();
-
+				Board board = new Board(1, listTitle, "gd", listInsert);
+				break;
 				
 			} else {
 				System.out.println("종료 합니다.");
