@@ -1,19 +1,24 @@
 package godonguk.submit_12;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class BoardSum {
-	int listNum;		// 글 번호
-	String listTitle;	// 글 제목 
-	String listDate;	// 글 게시일
-	String listInsert;	// 글 내용
+	private int listNum;		// 글 번호
+	private String listTitle;	// 글 제목 
+	private String listInsert;	// 글 내용
+	private String listDate;	// 글 게시일
 	
 	public BoardSum() {}
 	
-	public BoardSum(int listNum, String listTitle, String listDate, String listInsert) {
-		super();
-		this.listNum = listNum;
+	public BoardSum(String listTitle, String listInsert, String listDate) {
+		Board db = Board.getInstance();
+		this.listNum = db.makeNumber();
 		this.listTitle = listTitle;
-		this.listDate = listDate;
 		this.listInsert = listInsert;
+		Date currentTime = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+		this.listDate = sdf.format(currentTime);
 	}
 
 	

@@ -1,16 +1,29 @@
 package godonguk.submit_12;
 
-public class Board extends BoardSum {
+import java.util.ArrayList;
 
-	public Board() {
-		super();
-	}
+public class Board {
 
-	public Board(int listNum, String listTitle, String listDate, String listInsert) {
-		super(listNum, listTitle, listDate, listInsert);
+	private ArrayList<BoardSum> boardList = new ArrayList<>();
+	
+	private Board() {
+	}
+	private static Board instance = new Board();
+	
+	public static Board getInstance() {
+		return instance;
+	}
+	public int makeNumber() {
+		return boardList.size()+1;
 	}
 	
-	
-	
+	public void addBoard(BoardSum board) {
+		boardList.add(board);
+	}
+	public void showBoardList() {
+		for(BoardSum board : boardList) {
+			System.out.println(board);
+		}
+	}
 	
 }

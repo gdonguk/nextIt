@@ -8,7 +8,7 @@ public class AudioBoard extends BoardSum {
 	}
 
 	public AudioBoard(int listNum, String listTitle, String listDate, String listInsert, String audio) {
-		super(listNum, listTitle, listDate, listInsert);
+		super(listTitle, listDate, listInsert);
 		this.audio = audio;
 	}
 	
