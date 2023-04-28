@@ -21,6 +21,8 @@ public class StudentSurvice {
 	private StudentDAO dao = StudentDAO.getInstance();
 	private ConnectionPool cp = ConnectionPool.getInstance();
 	
+	
+	
 	// 회원목록 조회(SELECT) 메소드
 	public ArrayList<StudentVO> getStuList(){
 		Connection conn = cp.getConnection();
@@ -78,6 +80,20 @@ public class StudentSurvice {
 		return result;
 	}
 	
+	// 학생 점수 증가 메소드
+	public void plusScore(String stuId) {
+		Connection conn = cp.getConnection();
+		
+		try {
+			dao.plusScore(conn, stuId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			cp.releaseConnection(conn);
+		}
+		
+		
+	}
 
 	
 	
