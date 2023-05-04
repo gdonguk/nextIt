@@ -79,8 +79,7 @@ public class ProjectMain {
 					
 					while(true) {
 						// 뭐하지
-						System.out.println("1. ");
-						System.out.println("하이요 ");
+						System.out.println("1. 캐릭터 등록 || 2. 목록 ");
 						break;
 					}
 					
