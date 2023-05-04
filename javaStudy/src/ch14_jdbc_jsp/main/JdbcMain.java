@@ -173,8 +173,6 @@ public class JdbcMain {
 				System.out.print("닉네임 : ");
 				String name = scan.nextLine();
 
-//				stuService.registStudent(id, pw, name);
-
 				StudentVO stu = new StudentVO(id, pw, name, 0);
 				stuService.registStudent(stu);
 

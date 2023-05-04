@@ -20,8 +20,8 @@ public class ConnectionPool {
 			Connection conn = cf.getConnection();
 			pool.add(conn);
 		}
-		System.out.println("pool의 사이즈는 : " + pool.size());
-		System.out.println("Connection 객체를 잘 보관하였습니다.");
+//		System.out.println("pool의 사이즈는 : " + pool.size());
+//		System.out.println("Connection 객체를 잘 보관하였습니다.");
 	}
 	
 	private static ConnectionPool instance = new ConnectionPool();

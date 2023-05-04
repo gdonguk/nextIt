@@ -56,14 +56,14 @@ public class BoardDAO {
 	//-----------
 	
 	// 글 쓰기
-	public int boardWrite(Connection conn,int num, String title, String content) throws SQLException {
+	public int boardWrite(Connection conn, String title, String content) throws SQLException {
 		StringBuffer query = new StringBuffer();
 		query.append("INSERT INTO board (			");
 		query.append("		      board_num			");
 		query.append("		    , board_title		");
 		query.append("   		, board_content	");
-		query.append("	) VALUES (					");
-		query.append("		      ?					");
+		query.append("	) VALUES (					");		
+		query.append("  (SELECT COUNT(*)+1 FROM board)		");
 		query.append("		    , ?					");
 		query.append("		    , ?					");
 		query.append("	)							");
@@ -71,7 +71,6 @@ public class BoardDAO {
 		PreparedStatement ps = conn.prepareStatement(query.toString());
 		
 		int idx = 1;
-		ps.setInt(idx++, idx);
 		ps.setString(idx++, title);
 		ps.setString(idx++, content);
 

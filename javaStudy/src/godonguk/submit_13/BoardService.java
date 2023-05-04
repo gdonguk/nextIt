@@ -40,11 +40,10 @@ public class BoardService {
 	
 	// 글 쓰기
 	
-	public void boardWrite(int num, String title, String content) {
+	public void boardWrite(String title, String content) {
 		Connection conn = cp.getConnection();
 		try {
-			dao.boardWrite(conn,num, title, content);
-			System.out.println(num +title + content);
+			dao.boardWrite(conn, title, content);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
